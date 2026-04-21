@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kana Practice</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <h1 id="appTitle">Kana Practice</h1>
+      <div class="lang-toggle" id="langToggle" role="radiogroup" aria-label="Language">
+        <button class="lang-opt is-active" data-lang="japanese" type="button" role="radio" aria-checked="true">JA</button>
+        <button class="lang-opt" data-lang="korean" type="button" role="radio" aria-checked="false">KO</button>
+      </div>
+    </header>
+
+    <main class="stage">
+      <div class="ring-wrap">
+        <svg class="ring" viewBox="0 0 200 200" aria-hidden="true">
+          <circle class="ring-track" cx="100" cy="100" r="92" />
+          <circle class="ring-progress" cx="100" cy="100" r="92" />
+        </svg>
+        <div class="kana" id="kana">&nbsp;</div>
+      </div>
+      <div class="romaji" id="romaji">&nbsp;</div>
+    </main>
+
+    <footer class="controls">
+      <div class="control-group" role="radiogroup" aria-label="Character set">
+        <button class="seg" data-set="hiragana" type="button" role="radio" aria-checked="false">Hiragana</button>
+        <button class="seg" data-set="katakana" type="button" role="radio" aria-checked="false">Katakana</button>
+        <button class="seg is-active" data-set="both" type="button" role="radio" aria-checked="true">Both</button>
+      </div>
+
+      <label class="control-group speed">
+        <span class="label">Speed</span>
+        <input id="speed" type="range" min="0.5" max="8" step="0.1" value="3" />
+        <span class="label" id="speedValue">3.0s</span>
+      </label>
+
+      <button class="toggle is-active" id="youonToggle" type="button" aria-pressed="true">
+        Combos: On
+      </button>
+
+      <button class="toggle is-active" id="romajiToggle" type="button" aria-pressed="true">
+        Romaji: On
+      </button>
+
+      <button class="toggle play" id="playToggle" type="button" aria-pressed="false">
+        Pause <span class="kbd">P</span>
+      </button>
+    </footer>
+
+    <p class="hint">
+      <span class="kbd">Space</span> skip &nbsp;·&nbsp;
+      <span class="kbd">P</span> pause / play
+    </p>
+
+    <script src="app.js"></script>
+  </body>
+</html>
